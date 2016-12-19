@@ -1,0 +1,44 @@
+<%= form_for(group_event) do |f| %>
+  <% if group_event.errors.any? %>
+    <div id="error_explanation" class="o-padding-4">
+      <div class="error-message red lighten-2">
+        <h2><%= pluralize(group_event.errors.count, "error") %> prohibited this group_event from being saved:</h2>
+
+        <ul>
+        <% group_event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :started_at %><br>
+    <%= f.text_field :started_at, class: "datepicker" %>
+  </div>
+  <div class="field">
+    <%= f.label :duration, "Duration(in days)" %><br>
+    <%= f.text_field :duration %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "materialize-textarea" %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.check_box :published %>
+    <%= f.label :published %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn waves-effect waves-light f-left"%>
+    <%= link_to 'Back', group_events_path, class: "btn waves-effect waves-light  grey f-left" %>
+  </div>
+<% end %>

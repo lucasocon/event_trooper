@@ -1,0 +1,54 @@
+
+html, body{
+  height: 100%;
+  width: 100%;
+  margin-bottom: 4em;
+}
+
+h1{
+  font-size: 1.8em;
+  color: #5f5f5f;
+  margin: 0.67em 0;
+}
+h2{
+  font-size: 1.2em;
+  color: white;
+  margin: 0px;
+}
+
+a{
+  color: #4db6ac;
+}
+
+label{
+  font-size: 14px;
+}
+
+.f-left{
+  display: block;
+  float: left;
+  margin-right: 1em;
+}
+.alert-notice-toast{
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 30%;
+  padding: 30px;
+  margin: 0 auto;
+  z-index: 999999;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+.alert{
+  background-color: #b71c1c;
+  color: white;
+}
+.notice{
+  background-color: #43a047;
+  color: white;
+}
+
+.o-padding-4{
+  padding: 4em 0;
+}

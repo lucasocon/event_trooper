@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EventTest</title>
+  <%= stylesheet_link_tag    'application' %>
+  <%= javascript_include_tag 'application' %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="main">
+    <%- if notice %>
+      <div class="alert-notice-toast notice text-center" role="alert">
+        <%= notice %>
+      </div>
+    <% end %>
+    <%- if alert %>
+      <div class="alert-notice-toast alert text-center" role="alert" >
+        <%= alert %>
+      </div> 
+    <% end %>
+    <%= render "shared/header" %>
+    <div class="container group-events">
+      <%= yield %>
+    </div>
+  </div>
+  <script>
+    if ($('.alert-notice-toast:visible')) {
+      setTimeout((function() {
+        $('.alert-notice-toast').slideUp();
+      }), 5000);
+    }
+  </script>
+</body>
+</html>

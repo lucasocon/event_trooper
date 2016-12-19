@@ -1,0 +1,45 @@
+<div class="title">
+  <h1 class="f-left">Listing Group Events</h1>
+  <%= link_to new_group_event_path, class:"f-left btn-floating btn-large waves-effect waves-light" do %>
+    <i class="material-icons"> add </i>
+  <% end %>
+</div>
+<table class="striped highlight responsive-table">
+  <thead>
+    <tr>
+      <th>Started at</th>
+      <th>Duration</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Location</th>
+      <th>Published</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% group_events.each do |group_event| %>
+      <tr>
+        <td><%= group_event.started_at %></td>
+        <td><%= group_event.duration %> days </td>
+        <td><%= group_event.name %></td>
+        <td><%= group_event.description %></td>
+        <td><%= group_event.location %></td>
+        <td><%= group_event.get_state %></td>
+        <td>
+          <%= link_to edit_group_event_path(group_event) do %>
+            <i class="material-icons"> mode_edit </i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to group_event_deleted_path(group_event) , data: { confirm: 'Are you sure?' }  do %>
+            <i class="material-icons"> delete </i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+  
